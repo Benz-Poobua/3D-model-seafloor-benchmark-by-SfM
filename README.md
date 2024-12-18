@@ -4,7 +4,7 @@
 Marine geodesy focuses on studying seafloor crustal deformation, which spans approximately 70% of the Earth’s surface. However, conventional satellite-based geodetic techniques like GPS or InSAR cannot measure seafloor deformation since electromagnetic waves cannot penetrate water to significant depths due to substantial attenuation. Fortunately, over the past three decades, seafloor geodetic techniques have advanced to a level comparable to those implemented on land. Many seafloor geodetic techniques are now widely used, including acoustic ranging, fiber-optic strain sensors, repeat active-source sonar, seismic surveying, and continuous pressure-sensor monitoring of vertical motions (Bürgmann & Chadwell, 2014).
 
 
-A pressure sensor detects vertical displacement by measuring changes in seawater pressure. Since seawater is much denser than air, even a small depth difference results in a significant pressure change. A seafloor benchmark or monument is used as a reference point for measuring pressure. This approach is commonly implemented in subduction zones (e.g., Ballu et al., 2013; Cook et al., 2023).  
+A pressure sensor detects vertical displacement by measuring changes in seawater pressure. Since seawater is much denser than air, a small depth difference results in a significant pressure change. A seafloor benchmark or monument is used as a reference point for measuring pressure. This approach is commonly implemented in subduction zones (e.g., Ballu et al., 2013; Cook et al., 2023). Seafloor pressure sensor data offers a promising approach for monitoring vertical displacements associated with slow slip events (SSEs) in subduction zones, such as those in the Hikurangi Subduction Zone (e.g., Wallace et al., 2016; Woods et al., 2022) and the Cascadia Subduction Zone (e.g., Fredrickson et al., 2019). 
 
 ### 1.2 Importance of seafloor benchmarks 
 Seafloor pressure is a key indicator of seafloor height, so it is essential to account for pressure variations caused by oceanic and atmospheric conditions. Standard pressure gauges are unreliable and need self-calibration to improve the accuracy for long-term measurements (months to years) due to inherent drift (Polster et al., 2009). Several methods address this drift, including mobile pressure recorder (MPR) surveys, mobile pressure calibrator surveys, standard self-calibrating pressure recorders (SCPRs), and A0A sensors. These approaches continuously monitor and measure relative pressure changes.
@@ -94,11 +94,7 @@ Figure 11. Dense Cloud shows the high resolution of the three models by construc
 Figure 12. Model textured combines information from mesh and aligned images to construct realistic 3D models. Outlier points are removed.
 
 ## 4. Discussion
-The plate above the pole is missing in the Dense Cloud (Fig. 11), unlike the Point Cloud (Fig. 10). This missing part of the 3D model likely results from misinterpretation by Agisoft Metashape.
-
-First, the plate may be treated as a floating object due to insufficient tie points connecting it to the pole. Few images capture the connection between the plate and the pole, likely because it is challenging to position the camera to simultaneously center both the benchmark and the pole within the frame (Fig. 13). Additionally, the ROV recorded video footage of the benchmark from only one angle, limiting the number of useful images showing the connection between the plate and pole. A potential solution is to record video footage from multiple angles and altitudes to better capture details of the connection.
-
-Second, the plate's thinness and lack of texture present challenges for depth map construction. These characteristics can lead to unreliable depth information. Even with mild depth filtering applied, points that appeared to connect the plate and pole might have been removed, as they were potentially interpreted as noise (Fig. 14).
+Overall, the SfM algorithm was successful at producing a 3D surface model for the benchmark. However, not all surfaces were fully rendered.  The plate above the pole is missing in the Dense Cloud (Fig. 11), unlike in the rough Point Cloud (Fig. 10). This missing part of the 3D model likely results from misinterpretation by Agisoft Metashape. First, the plate may be treated as a floating object due to insufficient tie points connecting it to the pole. Few images capture the connection between the plate and the pole, likely because it is challenging to position the camera to simultaneously center both the benchmark and the pole within the frame (Fig. 13). Additionally, the ROV recorded video footage of the benchmark from only one angle, limiting the number of useful images showing the connection between the plate and pole. A potential solution is to record video footage from multiple angles and altitudes to better capture details of the connection. Second, the plate's thinness and lack of texture present challenges for depth map construction. These characteristics can lead to unreliable depth information. Even with mild depth filtering applied, points that appeared to connect the plate and pole might have been removed, as they were potentially interpreted as noise (Fig. 14).
 
 ![point cloud w/markers](https://github.com/Benz-Poobua/3D-model-seafloor-benchmark-by-SfM/blob/93430622894041f301846efd07422a354e364b58/Figures/Fig.%2013.png)
 Figure 13. Point Cloud with makers and scale bar. The tie points of the plate are still present, but the plate is too thin, and a few tie points connect the plate and the pole.
@@ -132,6 +128,8 @@ Cook, M. J., Fredrickson, E. K., Roland, E. C., Sasagawa, G. S., Schmidt, D. A.,
 
 David, C. G., Kohl, N., Casella, E., Rovere, A., Ballesteros, P., & Schlurmann, T. (2021). Structure-from-Motion on shallow reefs and beaches: potential and limitations of consumer-grade drones to reconstruct topography and bathymetry. Coral Reefs, 40(3), 835-851.
 
+Fredrickson, E. K., Wilcock, W. S., Schmidt, D. A., MacCready, P., Roland, E., Kurapov, A. L., ... & Sasagawa, G. S. (2019). Optimizing sensor configurations for the detection of slow‐slip earthquakes in seafloor pressure records, using the Cascadia subduction zone as a case study. Journal of Geophysical Research: Solid Earth, 124(12), 13504-13531.
+
 Lowe, G. (2004). Sift-the scale invariant feature transform. Int. J, 2(91-110), 2.
 
 Over, J. S. R., Ritchie, A. C., Kranenburg, C. J., Brown, J. A., Buscombe, D. D., Noble, T., ... & Wernette, P. A. (2021). Processing coastal imagery with Agisoft Metashape Professional Edition, version 1.6—Structure from motion workflow documentation (No. 2021-1039). US Geological Survey.
@@ -148,5 +146,9 @@ Snavely, N., Seitz, S. M., & Szeliski, R. (2008). Modeling the world from intern
 
 Storlazzi, C. D., Dartnell, P., Hatcher, G. A., & Gibbs, A. E. (2016). End of the chain? Rugosity and fine-scale bathymetry from existing underwater digital imagery using structure-from-motion (SfM) technology. Coral Reefs, 35(3), 889-894.
 
+Wallace, L. M., Webb, S. C., Ito, Y., Mochizuki, K., Hino, R., Henrys, S., ... & Sheehan, A. F. (2016). Slow slip near the trench at the Hikurangi subduction zone, New Zealand. Science, 352(6286), 701-704.
+
 Westoby, M. J., Brasington, J., Glasser, N. F., Hambrey, M. J., & Reynolds, J. M. (2012). ‘Structure-from-Motion’photogrammetry: A low-cost, effective tool for geoscience applications. Geomorphology, 179, 300-314.
+
+Woods, K., Webb, S. C., Wallace, L. M., Ito, Y., Collins, C., Palmer, N., ... & Barker, D. H. N. (2022). Using seafloor geodesy to detect vertical deformation at the Hikurangi subduction zone: Insights from self‐calibrating pressure sensors and ocean general circulation models. Journal of Geophysical Research: Solid Earth, 127(12), e2022JB023989.
 
